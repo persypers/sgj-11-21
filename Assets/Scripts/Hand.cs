@@ -60,4 +60,46 @@ public class Hand : MonoSingleton<Hand>
 		held[i] = !held[i];
 		return held[i];
 	}
+
+	public List<Card> GetActiveCards()
+	{
+		List<Card> result = new List<Card>();
+		for(int i = 0; i < cards.Count; i++)
+		{
+			if(held[i]) continue;
+			result.Add(cards[i]);
+		}
+		return result;
+	}
+
+	public List<int> GetIndexArray(List<Card> cards)
+	{
+		List<int> result = new List<int>();
+		for(int i = 0; i < cards.Count; i++)
+		{
+			int id = -1;
+			for(int j = 0; j < this.cards.Count; j++)
+			{
+				if(this.cards[j] == cards[i] && !result.Contains(j)) id = j;
+			}
+			Debug.Assert(id >= 0);
+			result.Add(id);
+		}
+		return result;
+	}
+
+	public List<int> ActiveToHandIndices(List<int> active)
+	{
+		List<int> result = new List<int>();
+		for(int i = 0; i < active.Count; i++)
+		{
+			int id = active[i];
+			for(int j = 0; j < held.Length; j++)
+			{
+				if(held[j] && j < id) id ++;
+			}
+			result.Add(id);
+		}
+		return result;
+	}
 }

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class GameState : MonoSingleton<GameState>
+public class TestState : MonoSingleton<TestState>
 {
 	public Hand hand;
+	public HandView handView;
 	public List<Card> deck;
 
 	public void Start()
@@ -14,12 +15,12 @@ public class GameState : MonoSingleton<GameState>
 		Card.Shuffle(deck);
 		hand.cards = deck.GetRange(0, 6);
 		deck.RemoveRange(0, 6);
-		HandView.Instance.Reset();
+		handView.Reset();
 	}
 
 	public void Draw()
 	{
-		if(HandView.Instance.cardPlaces.Count > hand.Count)
+		if(handView.cardPlaces.Count > hand.Count)
 		{
 			if(deck.Count == 0)
 			{
