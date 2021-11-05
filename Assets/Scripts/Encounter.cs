@@ -17,13 +17,12 @@ public class Encounter : ScriptableObject
 	[System.Serializable]
 	public class Effect
 	{
+		[System.Serializable]
 		public enum Type
 		{
-			Damage,
-			Heal,
-			Draw,
-			Discard,
-			Exchange
+			Sanity,
+			Redemtion,
+			Card,
 		}
 		public Type type;
 		public int magnitude;

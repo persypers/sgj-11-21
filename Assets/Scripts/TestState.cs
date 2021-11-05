@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class TestState : MonoSingleton<TestState>
+public class TestState : GameState
 {
 	public Hand hand;
 	public HandView handView;
