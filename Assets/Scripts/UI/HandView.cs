@@ -31,10 +31,6 @@ public class HandView : MonoSingleton<HandView>
 		c.anchor = cardPlaces[i].anchor;
 		c.transform.localScale = Vector3.one;
 		c.gameObject.SetActive(true);
-		c.OnRightClick = (cardView, index) => {
-			hand.RemoveCard(index);
-			cardView.OnRightClick = null;
-		};
 		c.cardIndex = i;
 		return c;
 	}
@@ -73,16 +69,18 @@ public class HandView : MonoSingleton<HandView>
 	{
 		cardViews[i].dieOnEnd = true;
 		cardViews[i].anchor = deck;
+		cardViews[i].cardIndex = -1;
 		cardViews.RemoveAt(i);
 		UpdateViewPositions();
 	}
 
 	public void OnCardHeld(int i)
 	{
-
+		cardPlaces[i].GetComponent<Animator>().SetBool("Low", hand.IsHeld(i));
 	}
 	public void OnEnable()
 	{
+		cardPlaces = new List<CardPlace>(cardPlaceContainer.GetComponentsInChildren<CardPlace>(true));
 		hand.cardInserted.AddListener(OnCardInserted);
 		hand.cardRemoved.AddListener(OnCardRemoved);
 		hand.cardHeld.AddListener(OnCardHeld);

@@ -23,6 +23,8 @@ public class EncounterInspector : Editor
 	{
 		base.OnInspectorGUI();
 		
+		serializedObject.Update();
+
 		var scene = EncounterEditableScene.Instance;
 		EncounterView view = scene?.view;
 		if(enc == null || view == null) return;
@@ -36,14 +38,17 @@ public class EncounterInspector : Editor
 				if(enc.blames[i].predicateIconPrefab != null) continue;
 				string templatePath = AssetDatabase.GetAssetPath(scene.predicatePrefabTemplate);
 				string prefabName = enc.name + "_" + (i + 1) + ".prefab";
+				string fullPath = scene.predicatePrefabFolder + "/" + prefabName;
+				fullPath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
 				if(!AssetDatabase.CopyAsset(
 					templatePath,
-					scene.predicatePrefabFolder + "/" + prefabName))
+					fullPath))
 				{
-					Debug.LogWarning("Failed to create " + prefabName);
+					Debug.LogWarning("Failed to create " + fullPath);
 					continue;
 				}
-				enc.blames[i].predicateIconPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(scene.predicatePrefabFolder + "/" + prefabName);
+				enc.blames[i].predicateIconPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(fullPath);
+				EditorUtility.SetDirty(enc);
 			}
 		}
 

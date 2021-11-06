@@ -23,8 +23,8 @@ MonoBehaviour:
     \u0431\u0440\u0438\u0437\u043E\u043C \u0441\u043F\u0430\u0441\u0435\u043D\u0438\u044F!
     \u0422\u044B..."
   blames:
-  - predicate: 0
-    predicateIconPrefab: {fileID: 0}
+  - predicate: 1
+    predicateIconPrefab: {fileID: 82216923030914558, guid: a96a0192d34faf9458180e2ce3c6dc85, type: 3}
     text: "- \u0411\u0440\u043E\u0441\u0438\u043B \u043D\u0430\u0441 \u043D\u0430
       \u0442\u043E\u043C \u043F\u0440\u043E\u043A\u043B\u044F\u0442\u043E\u043C \u043E\u0441\u0442\u0440\u043E\u0432\u0435,
       \u0437\u0430\u0431\u0440\u0430\u0432 \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
@@ -32,3 +32,23 @@ MonoBehaviour:
     effect:
       type: 2
       magnitude: 2
+    hostile: 1
+  - predicate: 3
+    predicateIconPrefab: {fileID: 82216923030914558, guid: dfc25e52d7888c6408250d04ad6d8ec8, type: 3}
+    text: "- \u041F\u0438\u043B \u0433\u0443\u043B\u044F\u043B \u0438 \u043C\u0430\u0442\u0435\u0440\u0438\u043B\u0441\u044F"
+    effect:
+      type: 0
+      magnitude: -3
+    hostile: 1
+  - predicate: 4
+    predicateIconPrefab: {fileID: 82216923030914558, guid: f5788bdb4c791924db3efaf7a45082f3, type: 3}
+    text: "- \u0422\u0430\u043A \u043B\u044E\u0431\u0438\u043B \u043C\u0435\u043D\u044F,
+      \u0447\u0442\u043E \u0437\u0430 \u0443\u0448\u0430\u043C\u0438 \u0442\u0440\u0435\u0449\u0430\u043B\u043E"
+    effect:
+      type: 1
+      magnitude: 2
+    hostile: 0
+  preBark: 
+  goodBark: 
+  mediumBark: 
+  badBark: 

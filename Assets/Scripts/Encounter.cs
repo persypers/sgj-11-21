@@ -13,6 +13,7 @@ public class Encounter : ScriptableObject
 		[TextArea]
 		public string text;
 		public Effect effect;
+		public bool hostile = true;
 	}
 
 	[System.Serializable]
@@ -33,4 +34,14 @@ public class Encounter : ScriptableObject
 	public string text;
 
 	public Blame[] blames;
+
+	[TextArea]
+	public string preBark;
+	[TextArea]
+	public string goodBark;
+	[TextArea]
+	public string mediumBark;
+	[TextArea]
+	public string badBark;
+
 }

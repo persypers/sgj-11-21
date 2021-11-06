@@ -44,14 +44,12 @@ public class CardView : MonoBehaviour, IPointerDownHandler
 		else if(isMoving) Snap();
 	}
 
-	public System.Action<CardView, int> OnClick = null;
-	public System.Action<CardView, int> OnRightClick = null;
 	public int cardIndex;
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		if(eventData.button == PointerEventData.InputButton.Left)
-			if(OnClick != null) OnClick(this, cardIndex);
+			GameState.Instance.SendMessage("CardTap", gameObject);
 		if(eventData.button == PointerEventData.InputButton.Right)
-			if(OnRightClick != null) OnRightClick(this, cardIndex);
+			GameState.Instance.SendMessage("CardTapRight", gameObject);
 	}
 }

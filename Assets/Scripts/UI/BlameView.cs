@@ -28,12 +28,12 @@ public class BlameView : MonoBehaviour
 #if UNITY_EDITOR
 			if(Application.IsPlaying(this))
 			{
-				Debug.Log("Pop instance");
+				//Debug.Log("Pop instance");
 				predicateIcon = GameObject.Instantiate(icon, predicateRoot);
 			}
 			else
 			{
-				Debug.Log("Pop ref");
+				//Debug.Log("Pop ref");
 				predicateIcon = UnityEditor.PrefabUtility.InstantiatePrefab(icon, predicateRoot) as GameObject;
 				predicateIcon.hideFlags = HideFlags.DontSave;
 			}
@@ -54,12 +54,12 @@ public class BlameView : MonoBehaviour
 #if UNITY_EDITOR
 			if(Application.IsPlaying(this))
 			{
-				Debug.Log("kill instance");
+				//Debug.Log("kill instance");
 				GameObject.Destroy(predicateIcon);
 			}
 			else
 			{
-				Debug.Log("kill ref");
+				//Debug.Log("kill ref");
 				GameObject.DestroyImmediate(predicateIcon);
 			}
 #else

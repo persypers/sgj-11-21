@@ -18,4 +18,10 @@ public class MenuState : GameState
 		menu.Hide();
 	}
 
+	public void StartGame()
+	{
+		Global.Instance.ResetGame();
+		Global.Instance.handView.gameObject.Show();
+		GameState.SwitchState<WalkState>();
+	}
 }

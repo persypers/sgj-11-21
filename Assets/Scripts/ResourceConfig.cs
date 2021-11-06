@@ -6,6 +6,7 @@ using UnityEngine;
 public class ResourceConfig : ScriptableObject
 {
 	public int maxCardsOnHand = 8;
+	public int firstDeal = 6;
 	[System.Serializable]
 	public class PredicateIconDict : SerializableDictionary<Predicates.Enum, GameObject> {}
 	public PredicateIconDict predicateIcons;
