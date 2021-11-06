@@ -56,9 +56,50 @@ public class Hand : MonoSingleton<Hand>
 	public bool Hold(int i)
 	{
 		Debug.Assert(i >= 0 && i < cards.Count);
-		cardHeld.Invoke(i);
+		if(!held[i] && GetHeldCount() >= Global.Instance.MaxHeld)
+		{
+			UnholdRandom();
+		}
 		held[i] = !held[i];
+		cardHeld.Invoke(i);
 		return held[i];
+	}
+
+	public int GetHeldCount()
+	{
+		int c = 0;
+		for(int i = 0; i < cards.Count; i++)
+		{
+			if(held[i]) c++;
+		}
+		return c;
+	}
+
+	public void UnholdAll()
+	{
+		for(int i = 0; i < cards.Count; i++)
+		{
+			if(held[i]) Hold(i);
+		}
+	}
+
+	public void UnholdRandom()
+	{
+		int hc = GetHeldCount();
+		if(hc < 1) return;
+		int c = Random.Range(0, hc);
+		for(int i = 0; i < cards.Count; i++)
+		{
+			if(held[i])
+			{
+				if(c == 0) 
+				{
+					Hold(i);
+					return;
+				}
+				c--;
+			}
+		}
 	}
 
 	public List<Card> GetActiveCards()

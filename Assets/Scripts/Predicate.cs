@@ -10,12 +10,16 @@ public static class Predicates
 		None,
 		_2S,
 		_2S_or_2S,
+		_4Red,
+		KQRed,
 	}
 
 	public static Dictionary<Enum, Predicate> Table = new Dictionary<Enum, Predicate>()
 	{
 		{Enum._2S, p_2S},
 		{Enum._2S_or_2S, Or(p_2S, p_2S)},
+		{Enum._4Red, X(Color(Card.Color.Red), 4)},
+		{Enum.KQRed, And(Both(Color(Card.Color.Red), Value(Card.Value.King)), Both(Color(Card.Color.Red), Value(Card.Value.Queen)))},
 	};
 	
 	public static List<Card> p_2S(List<Card> hand)
@@ -57,6 +61,23 @@ public static class Predicates
 				int value = (int) hand[i].value;
 				if(value >= min && value <= max)
 				{
+					hits.Add(hand[i]);
+					return hits;
+				}
+			}
+			return null;
+		};
+	}
+	public static Predicate Color(Card.Color color)
+	{
+		return (hand) => {
+			List<Card> hits = new List<Card>();
+			for(int i = 0; i < hand.Count; i++)
+			{
+				if(
+					(color == Card.Color.Red && (hand[i].mast == Card.Mast.Diamonds || hand[i].mast == Card.Mast.Hearts))
+					|| (color == Card.Color.Black && (hand[i].mast == Card.Mast.Spades || hand[i].mast == Card.Mast.Clubs))
+				) {
 					hits.Add(hand[i]);
 					return hits;
 				}

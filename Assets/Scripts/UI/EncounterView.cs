@@ -6,6 +6,7 @@ public class EncounterView : Fancy.MonoSingleton<EncounterView>
 {
 	public TMPro.TMP_Text label;
 	public BlameView[] blameViews;
+	public GameObject theButton;
 
 	public void Apply(Encounter encounter)
 	{
