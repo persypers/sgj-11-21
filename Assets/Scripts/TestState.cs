@@ -9,6 +9,8 @@ public class TestState : GameState
 	public HandView handView;
 	public List<Card> deck;
 
+	public EncounterView encounterView;
+	public Encounter encounter;
 	public void Start()
 	{
 		deck = Card.GenerateDeck();
@@ -16,6 +18,8 @@ public class TestState : GameState
 		hand.cards = deck.GetRange(0, 6);
 		deck.RemoveRange(0, 6);
 		handView.Reset();
+
+		encounterView.Apply(encounter);
 	}
 
 	public void Draw()

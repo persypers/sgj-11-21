@@ -8,7 +8,8 @@ public class Encounter : ScriptableObject
 	[System.Serializable]
 	public class Blame
 	{
-		public Predicates.Enum check;
+		public Predicates.Enum predicate;
+		public GameObject predicateIconPrefab;
 		[TextArea]
 		public string text;
 		public Effect effect;
