@@ -123,7 +123,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &4362449698616720493
 MonoBehaviour:
@@ -142,6 +142,7 @@ MonoBehaviour:
   - {fileID: 6865578803092612245}
   - {fileID: 3662945421476890166}
   - {fileID: 7555884952829362724}
+  theButton: {fileID: 1285071061255767316}
 --- !u!1 &1285071061255767316
 GameObject:
   m_ObjectHideFlags: 0

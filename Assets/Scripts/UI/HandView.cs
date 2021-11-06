@@ -93,4 +93,18 @@ public class HandView : MonoSingleton<HandView>
 		hand.cardHeld.RemoveListener(OnCardHeld);
 	}
 
+	public void SetHighlight(List<Card> cards)
+	{
+		for(int i = 0; i < cardPlaces.Count; i++)
+		{
+			cardPlaces[i].GetComponent<Animator>().SetBool("High", false);
+		}
+		if(cards == null) return;
+		var indices = hand.GetIndexArray(cards);
+		for(int i = 0; i < indices.Count; i++)
+		{
+			cardPlaces[indices[i]].GetComponent<Animator>().SetBool("High", true);
+		}
+		
+	}
 }

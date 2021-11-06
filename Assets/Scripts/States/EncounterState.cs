@@ -14,10 +14,12 @@ public class EncounterState : GameState
 		view = Global.Instance.encounterView;
 		view.Apply(enc);
 		view.gameObject.Show();
+		view.theButton.Show();
 	}
 
 	protected override void OnDisable()
 	{
+		view.theButton.Hide();
 		base.OnDisable();
 	}
 
@@ -30,6 +32,17 @@ public class EncounterState : GameState
 	{
 		int index = go.GetComponent<CardView>().cardIndex;
 		Debug.Log("Card tap: " + index + " : " + go.name );
+		if(index >= 0 && index < Global.Instance.hand.Count)
+		{
+			Global.Instance.hand.Hold(index);
+		}
+	}
+
+	public void CardTapRight(GameObject go)
+	{
+		if(!Global.Instance.config.rightClickDiscards) return;
+		int index = go.GetComponent<CardView>().cardIndex;
+		Debug.Log("Card tap right: " + index + " : " + go.name );
 		if(index >= 0 && index < Global.Instance.hand.Count)
 		{
 			Global.Instance.hand.Hold(index);

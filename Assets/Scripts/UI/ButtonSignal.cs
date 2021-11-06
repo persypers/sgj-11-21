@@ -19,7 +19,7 @@ public class ButtonSignal : MonoBehaviour, IPointerDownHandler, IPointerClickHan
 	{
 		if(mode == Mode.Down)
 		{
-			GameState.Instance.SendMessage(message, arg == null ? gameObject : arg);
+			GameState.Instance.SendMessage(message, arg == null ? gameObject : arg, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
@@ -27,7 +27,7 @@ public class ButtonSignal : MonoBehaviour, IPointerDownHandler, IPointerClickHan
 	{
 		if(mode == Mode.Click)
 		{
-			GameState.Instance.SendMessage(message, arg == null ? gameObject : arg);
+			GameState.Instance.SendMessage(message, arg == null ? gameObject : arg, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }

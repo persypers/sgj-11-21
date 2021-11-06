@@ -45,6 +45,14 @@ public class Global : MonoSingleton<Global>
 		}
 	}
 
+	public Encounter.Resolve resolveCache;
+	public Encounter.Resolve UpdateResolveCache()
+	{
+		List<Card> activeHand = hand.GetActiveCards();
+		resolveCache = nextEncounter.GetResolve(activeHand);
+		return resolveCache;
+	}
+
 	protected override void Awake()
 	{
 		base.Awake();

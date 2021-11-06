@@ -48,8 +48,8 @@ public class CardView : MonoBehaviour, IPointerDownHandler
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		if(eventData.button == PointerEventData.InputButton.Left)
-			GameState.Instance.SendMessage("CardTap", gameObject);
+			GameState.Instance.SendMessage("CardTap", gameObject, SendMessageOptions.DontRequireReceiver);
 		if(eventData.button == PointerEventData.InputButton.Right)
-			GameState.Instance.SendMessage("CardTapRight", gameObject);
+			GameState.Instance.SendMessage("CardTapRight", gameObject, SendMessageOptions.DontRequireReceiver);
 	}
 }
