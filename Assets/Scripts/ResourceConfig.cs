@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ResourceConfig", menuName = "SGJ/ResourceConfig", order = 0)]
 public class ResourceConfig : ScriptableObject
 {
+	public int maxCardsOnHand = 8;
 	[System.Serializable]
 	public class PredicateIconDict : SerializableDictionary<Predicates.Enum, GameObject> {}
 	public PredicateIconDict predicateIcons;

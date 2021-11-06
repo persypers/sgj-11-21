@@ -9,7 +9,8 @@ public class HandView : MonoSingleton<HandView>
 	public Transform deck;
 	public ObjectPool cardViewPool;
 	public List<CardView> cardViews;
-	public List<Transform> cardPlaces;
+	public Transform cardPlaceContainer;
+	List<CardPlace> cardPlaces;
 	
 	public void Clear()
 	{
@@ -24,8 +25,10 @@ public class HandView : MonoSingleton<HandView>
 	CardView CreateCardView(int i)
 	{
 		CardView c = cardViewPool.Get().GetComponent<CardView>();
+		c.transform.position = deck.position;
+		//c.Snap(deck);
 		c.Apply(hand[i]);
-		c.anchor = cardPlaces[i];
+		c.anchor = cardPlaces[i].anchor;
 		c.transform.localScale = Vector3.one;
 		c.gameObject.SetActive(true);
 		c.OnRightClick = (cardView, index) => {
@@ -39,6 +42,7 @@ public class HandView : MonoSingleton<HandView>
 	public void Reset()
 	{
 		Clear();
+		cardPlaces = new List<CardPlace>(cardPlaceContainer.GetComponentsInChildren<CardPlace>(true));
 		for(int i = 0; i < hand.Count; i++)
 		{
 			CardView c = CreateCardView(i);
@@ -51,7 +55,8 @@ public class HandView : MonoSingleton<HandView>
 	{
 		for(int j = 0; j < cardViews.Count; j++)
 		{
-			cardViews[j].anchor = cardPlaces[j];
+			cardViews[j].transform.SetSiblingIndex(j);
+			cardViews[j].anchor = cardPlaces[j].anchor;
 			cardViews[j].cardIndex = j;
 		}
 	}

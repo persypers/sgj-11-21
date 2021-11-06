@@ -24,7 +24,7 @@ public class TestState : GameState
 
 	public void Draw()
 	{
-		if(handView.cardPlaces.Count > hand.Count)
+		if(Global.Instance.config.maxCardsOnHand > hand.Count)
 		{
 			if(deck.Count == 0)
 			{
