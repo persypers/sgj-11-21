@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Config
   m_EditorClassIdentifier: 
   maxCardsOnHand: 9
+  foolModeEnabled: 1
+  showRandomCardsOnFail: 0
+  rightClickDiscards: 1
+  firstDeal: 6
   predicateIcons:
     m_keys: 
     m_values: []

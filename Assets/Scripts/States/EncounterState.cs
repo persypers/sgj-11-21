@@ -15,11 +15,32 @@ public class EncounterState : GameState
 		view.Apply(enc);
 		view.gameObject.Show();
 		view.theButton.Show();
+		
+		var hand = Global.Instance.hand;
+		hand.cardHeld.AddListener(OnHandChanged);
+		hand.cardInserted.AddListener(OnHandChanged);
+		hand.cardRemoved.AddListener(OnHandChanged);
+
+		OnHandChanged(0);
 	}
 
 	protected override void OnDisable()
 	{
 		view.theButton.Hide();
+
+		var hand = Global.Instance.hand;
+		hand.cardHeld.RemoveListener(OnHandChanged);
+		hand.cardInserted.RemoveListener(OnHandChanged);
+		hand.cardRemoved.RemoveListener(OnHandChanged);
+
+		if(Global.Instance.config.foolModeEnabled)
+		{
+			for(int i = 0; i < enc.blames.Length; i++)
+			{
+				view.blameViews[i].GetComponent<Animator>().SetBool("PreviewSuccess", false);
+			}
+		}
+
 		base.OnDisable();
 	}
 
@@ -45,7 +66,7 @@ public class EncounterState : GameState
 		Debug.Log("Card tap right: " + index + " : " + go.name );
 		if(index >= 0 && index < Global.Instance.hand.Count)
 		{
-			Global.Instance.hand.Hold(index);
+			Global.Instance.hand.RemoveCard(index);
 		}
 	}
 
@@ -53,5 +74,18 @@ public class EncounterState : GameState
 	{
 		Debug.Log("THE BUTTON: " + go.name);
 		GameState.SwitchState<HandOfFateState>();
+	}
+
+	public void OnHandChanged(int index)
+	{
+		if(Global.Instance.config.foolModeEnabled)
+		{
+			Global.Instance.handView.SetHighlight(null);
+			var resolve = Global.Instance.UpdateResolveCache();
+			for(int i = 0; i < resolve.blameResolves.Length; i++)
+			{
+				view.blameViews[i].GetComponent<Animator>().SetBool("PreviewSuccess", resolve.blameResolves[i].predicateSucceed);
+			}
+		}
 	}
 }

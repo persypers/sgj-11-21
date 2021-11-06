@@ -5,6 +5,8 @@ using Fancy;
 
 public class JudgementState : GameState
 {
+	public float checkEndPause = 0.5f;
+	public float pauseBetweenBlames = 0.5f;
 	EncounterView view;
 	Encounter enc;
 	Encounter.Resolve resolve;
@@ -46,10 +48,10 @@ public class JudgementState : GameState
 			{
 				yield return null;
 			}
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(checkEndPause);
 			anim.SetBool("Success", br.predicateSucceed);
 			anim.SetTrigger("CheckEnd");
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(pauseBetweenBlames);
 		}
 		GameState.SwitchState<EncounterState>();
 	}
