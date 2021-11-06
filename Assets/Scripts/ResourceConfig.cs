@@ -8,4 +8,24 @@ public class ResourceConfig : ScriptableObject
 	[System.Serializable]
 	public class PredicateIconDict : SerializableDictionary<Predicates.Enum, GameObject> {}
 	public PredicateIconDict predicateIcons;
+
+	public Card.Value cardValueOrder;
+	public Sprite[] redValueIcons;
+	public Sprite[] blackValueIcons;
+	public Card.Mast cardMastOrder;
+	public Sprite[] mastIcons;
+
+	public Sprite GetValueIcon(Card.Value value, Card.Color color = Card.Color.Default)
+	{
+		var sprites = color == Card.Color.Red ? redValueIcons : blackValueIcons;
+		return sprites[(int)value];
+	}
+
+	public Sprite GetMastIcon(Card.Mast mast)
+	{
+		return mastIcons[(int)mast];
+	}
+
+	public MiscIcon.Type miscIconOrder;
+	public Sprite[] miscIcons;
 }

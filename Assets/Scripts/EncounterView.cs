@@ -17,6 +17,8 @@ public class EncounterView : Fancy.MonoSingleton<EncounterView>
 			if(blames.Length > i)
 			{
 				blameViews[i].Apply(blames[i]);
+			} else {
+				blameViews[i].RemovePredicateIcon();
 			}
 		}
 	}

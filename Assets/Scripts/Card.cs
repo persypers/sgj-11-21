@@ -26,6 +26,13 @@ public struct Card : System.IEquatable<Card>
 		Hearts
 	}
 
+	public enum Color
+	{
+		Default,
+		Black,
+		Red
+	}
+
 	public static int TOTAL = 36;
 	public Mast mast;
 	public Value value;

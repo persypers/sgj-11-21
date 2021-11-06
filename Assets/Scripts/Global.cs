@@ -8,9 +8,4 @@ public class Global : MonoSingleton<Global>
 	public ResourceConfig config;
 	public HandView handView;
 	public Hand hand;
-
-	public void Start()
-	{
-		GameState.SwitchState<TestState>();
-	}
 }
