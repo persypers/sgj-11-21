@@ -64,6 +64,7 @@ MonoBehaviour:
   value: {fileID: 7956317114916008103}
   mast: {fileID: 2656531550946410947}
   anchor: {fileID: 0}
+  shirt: {fileID: 7840026989899173483}
   dieOnEnd: 0
   cardIndex: 0
 --- !u!114 &946948184377168092

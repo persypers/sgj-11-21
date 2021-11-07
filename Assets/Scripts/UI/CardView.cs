@@ -9,6 +9,7 @@ public class CardView : MonoBehaviour, IPointerDownHandler
 	public ValueIcon value;
 	public MastIcon mast;
 	public Transform anchor;
+	public GameObject shirt;
 	public bool dieOnEnd;
 	public static float Slinky = 0.16f;
 	public static float endThreshold = 0.01f;
