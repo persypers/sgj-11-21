@@ -82,7 +82,7 @@ public class Hand : MonoSingleton<Hand>
 
 	public void UnholdAll()
 	{
-		for(int i = 0; i < cards.Count; i++)
+		for(int i = 0; i < held.Length; i++)
 		{
 			if(held[i]) Hold(i);
 		}
