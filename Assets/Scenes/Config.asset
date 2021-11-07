@@ -19,9 +19,9 @@ MonoBehaviour:
   foolModeEnabled: 1
   allowDraw: 1
   showRandomCardsOnFail: 0
-  rightClickDiscards: 1
+  rightClickDiscards: 0
   skipCutscenes: 0
-  skipIntro: 1
+  skipIntro: 0
   firstDeal: 6
   maxHeld: 3
   predicateIcons:
