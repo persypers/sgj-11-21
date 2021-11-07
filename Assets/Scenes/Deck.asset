@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Deck
   m_EditorClassIdentifier: 
   deck:
+  - {fileID: 11400000, guid: 51800e23887a8f84dabb5cf4484317e5, type: 2}
   - {fileID: 11400000, guid: 842801d8fab8c8948b9e940afa66206f, type: 2}
+  - {fileID: 11400000, guid: 10187c2efec90414c8abc2c21ef8cf00, type: 2}
+  - {fileID: 11400000, guid: 10187c2efec90414c8abc2c21ef8cf00, type: 2}
   shuffle: 0
