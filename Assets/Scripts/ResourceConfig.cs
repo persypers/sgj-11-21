@@ -16,6 +16,7 @@ public class ResourceConfig : ScriptableObject
 	public bool skipCutscenes = false;
 	public bool skipIntro = false;
 	public int firstDeal = 6;
+	public int maxHeld = 3;
 	[System.Serializable]
 	public class PredicateIconDict : SerializableDictionary<Predicates.Enum, GameObject> {}
 	public PredicateIconDict predicateIcons;

@@ -48,13 +48,22 @@ public class Global : MonoSingleton<Global>
 	public int MaxHeld
 	{
 		get {
-			return 2;
+			return config.maxHeld;
 		}
 	}
 	public void ResetGame()
 	{
 		deck = Card.GenerateDeck();
 		Card.Shuffle(deck);
+		Card sk = new Card(Card.Mast.Spades, Card.Value.King);
+		Card hq = new Card(Card.Mast.Hearts, Card.Value.Queen);
+
+		deck.Remove(sk);
+		deck.Remove(hq);
+
+		deck.Insert(((byte)Random.Range(0, config.firstDeal - 2)), sk);
+		deck.Insert(((byte)Random.Range(0, config.firstDeal - 2)), hq);
+
 		Innocence = 0;
 		Sanity = config.baseSanity;
 		handDealt = false;

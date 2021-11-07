@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
+using UnityEngine.UI;
 
 public class HandView : MonoSingleton<HandView>
 {
@@ -13,6 +14,7 @@ public class HandView : MonoSingleton<HandView>
 	public UnityEngine.UI.HorizontalLayoutGroup placesContainer;
 	public int placesContainerWidth;
 	public int placesContainerMaxSpacing = 12;
+	public TMPro.TMP_Text flipLabel;
 	int shrinkCount = 9;
 	
 	public void Clear()

@@ -54,6 +54,8 @@ public class EncounterState : GameState
 			}
 		}
 
+		Global.Instance.handView.flipLabel.gameObject.Hide();
+
 		base.OnDisable();
 	}
 
@@ -109,5 +111,9 @@ public class EncounterState : GameState
 				view.blameViews[i].GetComponent<Animator>().SetBool("PreviewSuccess", resolve.blameResolves[i].predicateSucceed);
 			}
 		}
+
+		var label = Global.Instance.handView.flipLabel;
+		label.gameObject.SetActive(true);
+		label.text = Global.Instance.hand.GetHeldCount() + "/" + Global.Instance.config.maxHeld;
 	}
 }
