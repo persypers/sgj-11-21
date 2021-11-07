@@ -10,7 +10,7 @@ public class CardView : MonoBehaviour, IPointerDownHandler
 	public Transform anchor;
 	public bool dieOnEnd;
 	public static float Slinky = 0.16f;
-	public static float endThreshold = 4f;
+	public static float endThreshold = 0.01f;
 	public void Apply(Card c)
 	{
 		value.value = c.value;

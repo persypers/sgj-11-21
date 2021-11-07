@@ -10,6 +10,9 @@ public class HandView : MonoSingleton<HandView>
 	public ObjectPool cardViewPool;
 	public List<CardView> cardViews;
 	public CardPlace[] cardPlaces;
+	public UnityEngine.UI.HorizontalLayoutGroup placesContainer;
+	public int placesContainerWidth;
+	public int placesContainerMaxSpacing = 12;
 	int shrinkCount = 9;
 	
 	public void Clear()
@@ -63,9 +66,17 @@ public class HandView : MonoSingleton<HandView>
 
 	public void UpdateCardPlaces()
 	{
+		int w = 158;
+		int c = hand.Count;
+
+		int spacing = c < 9 ? 12 : ((placesContainerWidth - w) / (c - 1) - w);
+		spacing = Mathf.Min(spacing, placesContainerMaxSpacing);
+
+		placesContainer.spacing = spacing;
+
 		for(int i = 0; i < cardPlaces.Length; i++)
 		{
-			cardPlaces[i].gameObject.SetActive(i < hand.Count || i < shrinkCount);
+			//cardPlaces[i].gameObject.SetActive(i < hand.Count || i < shrinkCount);
 		}
 	}
 
@@ -92,6 +103,7 @@ public class HandView : MonoSingleton<HandView>
 	}
 	public void OnEnable()
 	{
+		hand = Global.Instance.hand;
 		hand.cardInserted.AddListener(OnCardInserted);
 		hand.cardRemoved.AddListener(OnCardRemoved);
 		hand.cardHeld.AddListener(OnCardHeld);
