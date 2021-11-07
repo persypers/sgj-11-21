@@ -105,8 +105,10 @@ Animation:
   m_GameObject: {fileID: 7354042256690986697}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 3ed9cb9b1381db043acc820e42494d12, type: 2}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 8e8f637775484b6419a3392b9a9ccdd5, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8e8f637775484b6419a3392b9a9ccdd5, type: 2}
+  - {fileID: 7400000, guid: 3ed9cb9b1381db043acc820e42494d12, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
