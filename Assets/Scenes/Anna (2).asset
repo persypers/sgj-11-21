@@ -17,19 +17,19 @@ MonoBehaviour:
     \u0445\u043E\u0440\u043E\u0448\u043E\u2026 \u0415\u0449\u0451 \u043D\u0435\u043C\u043D\u043E\u0433\u043E
     \u0438 \u043C\u044B \u0441\u043D\u043E\u0432\u0430 \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u043C\u0441\u044F\u2026
     \u0422\u044B \u0432\u0435\u0434\u044C \u043F\u043E\u043C\u043D\u0438\u0448\u044C\u2026"
+  character: {fileID: 0}
   blames:
   - predicate: 10
-    predicateIconPrefab: {fileID: 0}
-    text: "\u041D\u0430\u0448\u0435 \u0434\u0435\u0440\u0435\u0432\u043E 8"
+    predicateIconPrefab: {fileID: 82216923030914558, guid: 7cadd4da3231faa4bad39d8f433a22f2, type: 3}
+    text: "\u041D\u0430\u0448\u0435 \u0434\u0435\u0440\u0435\u0432\u043E."
     effect:
       type: 2
       magnitude: -2
     hostile: 0
   - predicate: 9
-    predicateIconPrefab: {fileID: 0}
+    predicateIconPrefab: {fileID: 82216923030914558, guid: 67bcbf4a44e9d1243a6dd9f270cb40ab, type: 3}
     text: "\u0422\u043E \u0441\u0442\u0438\u0445\u043E\u0442\u0432\u043E\u0440\u0435\u043D\u0438\u0435,
-      \u0447\u0442\u043E \u0442\u044B \u043D\u0430\u043F\u0438\u0441\u0430\u043B
-      7"
+      \u0447\u0442\u043E \u0442\u044B \u043D\u0430\u043F\u0438\u0441\u0430\u043B."
     effect:
       type: 1
       magnitude: 1

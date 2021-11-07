@@ -17,20 +17,20 @@ MonoBehaviour:
     \u0445\u043E\u0440\u043E\u0448\u043E\u2026 \u0415\u0449\u0451 \u043D\u0435\u043C\u043D\u043E\u0433\u043E
     \u0438 \u043C\u044B \u0441\u043D\u043E\u0432\u0430 \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u043C\u0441\u044F\u2026
     \u0422\u044B \u0432\u0435\u0434\u044C \u043F\u043E\u043C\u043D\u0438\u0448\u044C\u2026"
+  character: {fileID: 0}
   blames:
   - predicate: 8
-    predicateIconPrefab: {fileID: 0}
+    predicateIconPrefab: {fileID: 82216923030914558, guid: c7065618c316c4e4e9987646b6e5711c, type: 3}
     text: "\u0422\u043E\u0442 \u0434\u043E\u043C\u0438\u043A \u0447\u0442\u043E \u043C\u044B
-      \u0445\u043E\u0442\u0435\u043B\u0438 \u043A\u0443\u043F\u0438\u0442\u044C.
-      6"
+      \u0445\u043E\u0442\u0435\u043B\u0438 \u043A\u0443\u043F\u0438\u0442\u044C."
     effect:
       type: 2
       magnitude: -2
     hostile: 0
   - predicate: 11
-    predicateIconPrefab: {fileID: 0}
+    predicateIconPrefab: {fileID: 82216923030914558, guid: 706c7ea8e6591884e9f739a532849b7c, type: 3}
     text: "\u041A\u043E\u043B\u044C\u0446\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0435
-      \u043C\u044B \u0432\u044B\u0431\u0440\u0430\u043B\u0438. 9"
+      \u043C\u044B \u0432\u044B\u0431\u0440\u0430\u043B\u0438."
     effect:
       type: 1
       magnitude: 1
