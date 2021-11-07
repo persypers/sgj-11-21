@@ -7,6 +7,7 @@ public class ApproachState : GameState
 {
 	Encounter enc;
 	GameObject character;
+	public float safetyTime = 20f;
 	protected override void OnEnable()
 	{
 		//Global.Instance.PopNextEncounter();
@@ -21,6 +22,8 @@ public class ApproachState : GameState
 		character.transform.SetParent(Global.Instance.groundLayer, true);
 		Global.Instance.character = character;
 
+		t = 0;
+
 		base.OnEnable();
 	}
 
@@ -29,12 +32,15 @@ public class ApproachState : GameState
 		base.OnDisable();
 	}
 
+	float t = 0;
 	protected override void Update()
 	{
 		base.Update();
 
-		float delta = Global.Instance.characterStopRoot.position.x - character.transform.position.x;
-		if(Mathf.Abs(delta) < 0.01f)
+		t += Time.deltaTime;
+
+		float delta = character.transform.position.x - Global.Instance.characterStopRoot.position.x ;
+		if(delta < 0.01f || t > safetyTime)
 		{
 			GameState.SwitchState<EncounterState>();
 		}
