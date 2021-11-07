@@ -60,6 +60,7 @@ public class HandView : MonoSingleton<HandView>
 			cardViews[j].transform.SetSiblingIndex(j);
 			cardViews[j].anchor = cardPlaces[j].anchor;
 			cardViews[j].cardIndex = j;
+			if(hand.IsHeld(j)) cardViews[j].shirt.Show(); else cardViews[j].shirt.Hide();
 			cardPlaces[j].GetComponent<Animator>().SetBool("Low", hand.IsHeld(j));
 		}
 	}
@@ -93,6 +94,7 @@ public class HandView : MonoSingleton<HandView>
 		cardViews[i].dieOnEnd = true;
 		cardViews[i].anchor = deck;
 		cardViews[i].cardIndex = -1;
+		cardViews[i].shirt.Hide();
 		cardViews.RemoveAt(i);
 		UpdateViewPositions();
 	}
@@ -100,6 +102,7 @@ public class HandView : MonoSingleton<HandView>
 	public void OnCardHeld(int i)
 	{
 		cardPlaces[i].GetComponent<Animator>().SetBool("Low", hand.IsHeld(i));
+		if(hand.IsHeld(i)) cardViews[i].shirt.Show(); else cardViews[i].shirt.Hide();
 	}
 	public void OnEnable()
 	{
