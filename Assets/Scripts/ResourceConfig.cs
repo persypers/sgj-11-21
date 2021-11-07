@@ -8,6 +8,7 @@ public class ResourceConfig : ScriptableObject
 	public int maxCardsOnHand = 8;
 	public int maxInnocence = 10;
 	public int baseSanity = 30;
+	public float minBarkTime = 4f;
 	public bool foolModeEnabled = false;
 	public bool showRandomCardsOnFail = false;
 	public bool rightClickDiscards = true;
@@ -23,6 +24,7 @@ public class ResourceConfig : ScriptableObject
 	public Sprite[] blackValueIcons;
 	public Card.Mast cardMastOrder;
 	public Sprite[] mastIcons;
+	public GameObject captainPlaceholder;
 
 	public Sprite GetValueIcon(Card.Value value, Card.Color color = Card.Color.Default)
 	{

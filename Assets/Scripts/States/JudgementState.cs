@@ -62,6 +62,7 @@ public class JudgementState : GameState
 			view.blameViews[i].GetComponent<Animator>().SetTrigger("Reset");
 		}
 		Global.Instance.encounterView.gameObject.Hide();
+		GameObject.Destroy(Global.Instance.character);
 		base.OnDisable();
 	}
 

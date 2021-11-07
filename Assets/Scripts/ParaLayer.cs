@@ -31,4 +31,15 @@ public class ParaLayer : MonoBehaviour
 		p.x = pos;
 		transform.position = p;
 	}
+
+	public void Pop()
+	{
+		while(pos < 0)
+		{
+			pos += length;
+			Vector3 p = transform.position;
+			p.x = pos;
+			transform.position = p;
+		}
+	}
 }

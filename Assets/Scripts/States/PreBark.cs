@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class WalkState : GameState
+public class PreBark : GameState
 {
-	public const float TIME = 1.0f;
 	float t;
 	protected override void OnEnable()
 	{
+		Global.Instance.PopNextEncounter();
+
 		base.OnEnable();
-		Ben.Instance.isWalking = true;
-		Ben.Instance.SetTarget(Ben.Instance.normalAnchor);
+		var go = Global.Instance.barkLabel;
+		go.Show();
+		go.GetComponent<TMPro.TMP_Text>().text = Global.Instance.nextEncounter.preBark;
 		t = 0.0f;
 	}
 
@@ -25,9 +27,9 @@ public class WalkState : GameState
 	{
 		base.Update();
 		t += Time.deltaTime;
-		if(t >= TIME && Ben.Instance.IsTargetReached())
+		if(t >= Global.Instance.config.minBarkTime)
 		{
-			GameState.SwitchState<PreBark>();
+			GameState.SwitchState<ApproachState>();
 		}
 	}
 }

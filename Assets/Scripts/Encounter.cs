@@ -65,6 +65,7 @@ public class Encounter : EncounterSource
 
 	[TextArea]
 	public string text;
+	public GameObject character;
 
 	public Blame[] blames;
 

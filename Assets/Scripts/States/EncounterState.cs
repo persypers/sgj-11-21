@@ -10,8 +10,6 @@ public class EncounterState : GameState
 	protected override void OnEnable()
 	{
 		base.OnEnable();
-		
-		Global.Instance.PopNextEncounter();
 
 		enc = Global.Instance.nextEncounter;
 		view = Global.Instance.encounterView;
@@ -26,6 +24,7 @@ public class EncounterState : GameState
 
 		OnHandChanged(0);
 
+		Global.Instance.barkLabel.Hide();
 		Ben.Instance.isWalking = false;
 	}
 

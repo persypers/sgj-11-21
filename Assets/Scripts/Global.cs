@@ -10,12 +10,16 @@ public class Global : MonoSingleton<Global>
 	public HandView handView;
 	public EncounterView encounterView;
 	public StatusBar statusBar;
+	public GameObject barkLabel;
 	
 	public Hand hand;
 	public List<Card> deck;
 
 	public Para para;
-	public Canvas mainCanvas;
+	public GameObject character;
+	public Transform groundLayer;
+	public Transform characterAppearRoot;
+	public Transform characterStopRoot;
 
 	int sanity;
 	public int Sanity
