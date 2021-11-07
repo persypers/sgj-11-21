@@ -37,8 +37,15 @@ public class EncounterInspector : Editor
 			{
 				if(enc.blames[i].predicateIconPrefab != null) continue;
 				string templatePath = AssetDatabase.GetAssetPath(scene.predicatePrefabTemplate);
-				string prefabName = enc.name + "_" + (i + 1) + ".prefab";
+				string prefabName = System.Enum.GetName(typeof(Predicates.Enum), enc.blames[i].predicate) + ".prefab";
 				string fullPath = scene.predicatePrefabFolder + "/" + prefabName;
+				GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(fullPath);
+				if(prefab)
+				{
+					enc.blames[i].predicateIconPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(fullPath);
+					EditorUtility.SetDirty(enc);
+					continue;
+				}
 				fullPath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
 				if(!AssetDatabase.CopyAsset(
 					templatePath,
