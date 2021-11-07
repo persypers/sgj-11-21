@@ -10,6 +10,7 @@ public class ResourceConfig : ScriptableObject
 	public int baseSanity = 30;
 	public float minBarkTime = 4f;
 	public bool foolModeEnabled = false;
+	public bool allowDraw = false;
 	public bool showRandomCardsOnFail = false;
 	public bool rightClickDiscards = true;
 	public bool skipCutscenes = false;

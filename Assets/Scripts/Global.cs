@@ -14,6 +14,7 @@ public class Global : MonoSingleton<Global>
 	
 	public Hand hand;
 	public List<Card> deck;
+	public GameObject deckUi;
 
 	public Para para;
 	public GameObject character;
@@ -40,6 +41,8 @@ public class Global : MonoSingleton<Global>
 		}
 	}
 
+	public bool handDealt = false;
+
 	public EncounterSource game;
 	public Encounter nextEncounter;
 	public int MaxHeld
@@ -54,7 +57,17 @@ public class Global : MonoSingleton<Global>
 		Card.Shuffle(deck);
 		Innocence = 0;
 		Sanity = config.baseSanity;
+		handDealt = false;
 		game.Reset();
+
+		var label = deckUi.transform.GetComponentInChildren<TMPro.TMP_Text>();
+		if(label != null) label.text = deck.Count.ToString();
+
+		hand.Reset();
+		handView.hand = hand;
+		handView.Reset();
+		deckUi.Show();
+
 		//hand.cards = deck.GetRange(0, config.firstDeal);
 		//deck.RemoveRange(0, config.firstDeal);
 		//handView.Reset();
@@ -78,6 +91,11 @@ public class Global : MonoSingleton<Global>
 			}
 			hand.AddCard(deck[0]);
 			deck.RemoveAt(0);
+
+			if(deck.Count == 0) deckUi.Hide();
+
+			var label = deckUi.transform.GetComponentInChildren<TMPro.TMP_Text>();
+			if(label != null) label.text = deck.Count.ToString();
 		}
 	}
 
@@ -93,5 +111,19 @@ public class Global : MonoSingleton<Global>
 	{
 		base.Awake();
 		GameState.SwitchState<IntroState>();
+	}
+
+	public void OnRoundEnd()
+	{
+		if(Innocence >= config.maxInnocence)
+		{
+			GameState.SwitchState<WinState>();
+		}
+		else if(Sanity <= 0 || deck.Count <= 0)
+		{
+			GameState.SwitchState<GameOver>();
+		} else {
+			GameState.SwitchState<PostBark>();
+		}
 	}
 }

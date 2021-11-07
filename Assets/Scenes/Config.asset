@@ -15,7 +15,9 @@ MonoBehaviour:
   maxCardsOnHand: 36
   maxInnocence: 10
   baseSanity: 30
+  minBarkTime: 4
   foolModeEnabled: 1
+  allowDraw: 1
   showRandomCardsOnFail: 0
   rightClickDiscards: 1
   skipCutscenes: 0

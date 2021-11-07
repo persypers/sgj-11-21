@@ -40,7 +40,7 @@ public class DiscardState : GameState
 
 		if(toDiscard <= 0)
 		{
-			GameState.SwitchState<PostBark>();
+			Global.Instance.OnRoundEnd();
 		}
 	}
 

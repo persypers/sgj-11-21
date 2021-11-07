@@ -18,6 +18,7 @@ public class Ben : MonoSingleton<Ben>
 	public Transform appearAnchor;
 	public Transform normalAnchor;
 	public Transform killAnchor;
+	public Transform winAnchor;
 	Transform ben;
 
 	protected override void Init()
@@ -55,15 +56,11 @@ public class Ben : MonoSingleton<Ben>
 
 	public void Reset()
 	{
-		animator.SetTrigger("Reset");
+		die = false;
 	}
 	public void Update()
 	{
-		if(die) {
-			animator.SetTrigger("Die");
-			isWalking = false;
-			die = false;
-		}
+		animator.SetBool("Die", die);
 		animator.SetBool("Walk", isWalking);
 
 		delta = (target.position.x - ben.position.x);
