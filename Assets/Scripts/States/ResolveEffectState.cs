@@ -51,7 +51,7 @@ public class ResolveEffectState : GameState
 			GameState.SwitchState<DiscardState>();
 		}
 		else {
-			GameState.SwitchState<PostBark>();
+			Global.Instance.OnRoundEnd();
 		}
 
 	}

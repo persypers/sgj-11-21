@@ -10,6 +10,9 @@ public class HandView : MonoSingleton<HandView>
 	public ObjectPool cardViewPool;
 	public List<CardView> cardViews;
 	public CardPlace[] cardPlaces;
+	public UnityEngine.UI.HorizontalLayoutGroup placesContainer;
+	public int placesContainerWidth;
+	public int placesContainerMaxSpacing = 12;
 	int shrinkCount = 9;
 	
 	public void Clear()
@@ -57,15 +60,24 @@ public class HandView : MonoSingleton<HandView>
 			cardViews[j].transform.SetSiblingIndex(j);
 			cardViews[j].anchor = cardPlaces[j].anchor;
 			cardViews[j].cardIndex = j;
+			if(hand.IsHeld(j)) cardViews[j].shirt.Show(); else cardViews[j].shirt.Hide();
 			cardPlaces[j].GetComponent<Animator>().SetBool("Low", hand.IsHeld(j));
 		}
 	}
 
 	public void UpdateCardPlaces()
 	{
+		int w = 158;
+		int c = hand.Count;
+
+		int spacing = c < 9 ? 12 : ((placesContainerWidth - w) / (c - 1) - w);
+		spacing = Mathf.Min(spacing, placesContainerMaxSpacing);
+
+		placesContainer.spacing = spacing;
+
 		for(int i = 0; i < cardPlaces.Length; i++)
 		{
-			cardPlaces[i].gameObject.SetActive(i < hand.Count || i < shrinkCount);
+			//cardPlaces[i].gameObject.SetActive(i < hand.Count || i < shrinkCount);
 		}
 	}
 
@@ -82,6 +94,7 @@ public class HandView : MonoSingleton<HandView>
 		cardViews[i].dieOnEnd = true;
 		cardViews[i].anchor = deck;
 		cardViews[i].cardIndex = -1;
+		cardViews[i].shirt.Hide();
 		cardViews.RemoveAt(i);
 		UpdateViewPositions();
 	}
@@ -89,9 +102,11 @@ public class HandView : MonoSingleton<HandView>
 	public void OnCardHeld(int i)
 	{
 		cardPlaces[i].GetComponent<Animator>().SetBool("Low", hand.IsHeld(i));
+		if(hand.IsHeld(i)) cardViews[i].shirt.Show(); else cardViews[i].shirt.Hide();
 	}
 	public void OnEnable()
 	{
+		hand = Global.Instance.hand;
 		hand.cardInserted.AddListener(OnCardInserted);
 		hand.cardRemoved.AddListener(OnCardRemoved);
 		hand.cardHeld.AddListener(OnCardHeld);

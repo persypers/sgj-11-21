@@ -22,6 +22,15 @@ public class EncounterState : GameState
 		hand.cardInserted.AddListener(OnHandChanged);
 		hand.cardRemoved.AddListener(OnHandChanged);
 
+		if(!Global.Instance.handDealt)
+		{
+			Global.Instance.handDealt = true;
+			for(int i = 0; i < Global.Instance.config.firstDeal; i++)
+			{
+				Global.Instance.Draw();
+			}
+		}
+
 		OnHandChanged(0);
 
 		Global.Instance.barkLabel.Hide();
@@ -73,6 +82,15 @@ public class EncounterState : GameState
 			Global.Instance.hand.RemoveCard(index);
 		}
 	}
+
+	public void Draw(GameObject go)
+	{
+		if(Global.Instance.config.allowDraw)
+		{
+			Global.Instance.Draw();
+		}
+	}
+
 
 	public void THEBUTTON(GameObject go)
 	{

@@ -15,9 +15,6 @@ public class IntroState : CutsceneState
 
 	protected override void OnDisable()
 	{
-		Ben.Instance.SetTarget(Ben.Instance.normalAnchor);
-		Ben.Instance.Snap();
-		Ben.Instance.isWalking = true;
 		base.OnDisable();
 	}
 
@@ -25,16 +22,14 @@ public class IntroState : CutsceneState
 	protected override void Update()
 	{
 		base.Update();
-		if(cutsceneEnded && Ben.Instance.IsTargetReached() || Global.Instance.config.skipIntro)
+		if(Global.Instance.config.skipIntro)
 		{
-			GameState.SwitchState<MenuState>();
+			GameState.SwitchState<IntroWalk>();
 		}
 	}
 
 	protected override void OnCutsceneEnd()
 	{
-		cutsceneEnded = true;
-		Ben.Instance.SetTarget(Ben.Instance.normalAnchor);
-		Ben.Instance.isWalking = true;
+		GameState.SwitchState<IntroWalk>();
 	}
 }

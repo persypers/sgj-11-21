@@ -31,6 +31,11 @@ public class Hand : MonoSingleton<Hand>
 	public CardEvent cardInserted;
 	public CardEvent cardHeld;
 
+	public void Reset()
+	{
+		cards.Clear();
+		UnholdAll();
+	}
 	public void AddCard(Card c)
 	{
 		cards.Add(c);
