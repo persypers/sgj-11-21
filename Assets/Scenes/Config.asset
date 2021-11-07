@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCardsOnHand: 36
   maxInnocence: 10
-  baseSanity: 30
-  minBarkTime: 4
+  baseSanity: 45
+  minBarkTime: 1.5
   foolModeEnabled: 1
   allowDraw: 1
   showRandomCardsOnFail: 0
