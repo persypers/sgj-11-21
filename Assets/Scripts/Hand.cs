@@ -41,7 +41,7 @@ public class Hand : MonoSingleton<Hand>
 	{
 		Debug.Assert(i >= 0 && i < cards.Count);
 		cards.RemoveAt(i);
-		for(int j = i; j < cards.Count; j++)
+		for(int j = i; j < held.Length - 1; j++)
 		{
 			held[j] = held[j + 1];
 		}

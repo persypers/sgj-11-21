@@ -10,6 +10,9 @@ public class EncounterState : GameState
 	protected override void OnEnable()
 	{
 		base.OnEnable();
+		
+		Global.Instance.PopNextEncounter();
+
 		enc = Global.Instance.nextEncounter;
 		view = Global.Instance.encounterView;
 		view.Apply(enc);

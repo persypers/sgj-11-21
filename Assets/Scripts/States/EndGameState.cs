@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class MenuState : GameState
+public class EndGameState : GameState
 {
-	public GameObject menu;
 	protected override void OnEnable()
 	{
 		base.OnEnable();
-		menu.Show();
+		Global.Instance.gameUi.Hide();
 	}
 
 	protected override void OnDisable()
 	{
 		base.OnDisable();
-		menu.Hide();
 	}
 
-	public void StartGame()
+	protected override void Update()
 	{
-		GameState.SwitchState<BeginGameState>();
+		base.Update();
+		GameState.SwitchState<MenuState>();
 	}
 }

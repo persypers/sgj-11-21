@@ -6,6 +6,8 @@ using UnityEngine;
 public class ResourceConfig : ScriptableObject
 {
 	public int maxCardsOnHand = 8;
+	public int maxInnocence = 10;
+	public int baseSanity = 30;
 	public bool foolModeEnabled = false;
 	public bool showRandomCardsOnFail = false;
 	public bool rightClickDiscards = true;

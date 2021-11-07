@@ -26,6 +26,7 @@ public class HandView : MonoSingleton<HandView>
 	{
 		CardView c = cardViewPool.Get().GetComponent<CardView>();
 		c.transform.position = deck.position;
+		cardPlaces[i].GetComponent<Animator>().SetBool("Low", hand.IsHeld(i));
 		//c.Snap(deck);
 		c.Apply(hand[i]);
 		c.anchor = cardPlaces[i].anchor;
@@ -54,6 +55,7 @@ public class HandView : MonoSingleton<HandView>
 			cardViews[j].transform.SetSiblingIndex(j);
 			cardViews[j].anchor = cardPlaces[j].anchor;
 			cardViews[j].cardIndex = j;
+			cardPlaces[j].GetComponent<Animator>().SetBool("Low", hand.IsHeld(j));
 		}
 	}
 

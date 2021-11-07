@@ -24,8 +24,7 @@ public class JudgementState : GameState
 		}
 		else
 		{
-			var activeHand = Global.Instance.hand.GetActiveCards();
-			resolve = enc.GetResolve(activeHand);
+			resolve = Global.Instance.UpdateResolveCache();
 		}
 
 		StartCoroutine(StateRoutine());
@@ -53,7 +52,13 @@ public class JudgementState : GameState
 			anim.SetTrigger("CheckEnd");
 			yield return new WaitForSeconds(pauseBetweenBlames);
 		}
-		GameState.SwitchState<EncounterState>();
+		if(resolve.isHostile)
+		{
+			GameState.SwitchState<GuiltyClashState>();
+		}
+		else {
+			GameState.SwitchState<InnocentClashState>();
+		}
 	}
 
 	protected override void OnDisable()
@@ -63,6 +68,7 @@ public class JudgementState : GameState
 		{
 			view.blameViews[i].GetComponent<Animator>().SetTrigger("Reset");
 		}
+		Global.Instance.encounterView.gameObject.Hide();
 		base.OnDisable();
 	}
 

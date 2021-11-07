@@ -2,9 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Encounter", menuName = "SGJ/Encounter", order = 0)]
-public class Encounter : ScriptableObject
+public abstract class EncounterSource : ScriptableObject
 {
+	public abstract Encounter Get();
+	public virtual void Reset() {}
+}
+
+[CreateAssetMenu(fileName = "Encounter", menuName = "SGJ/Encounter", order = 0)]
+public class Encounter : EncounterSource
+{
+	public override Encounter Get()
+	{
+		return this;
+	}
 	[System.Serializable]
 	public class Blame
 	{
@@ -77,6 +87,12 @@ public class Encounter : ScriptableObject
 	{
 		public Blame.Resolve[] blameResolves;
 		public ResolveType type;
+		public bool isHostile = false;
+
+		public int sanityEffect = 0;
+		public int innocenceEffect = 0;
+		public int draw = 0;
+		public int discard = 0;
 	}
 
 	public Resolve GetResolve(List<Card> hand)
@@ -92,6 +108,26 @@ public class Encounter : ScriptableObject
 			hasBad |= !r.isGood;
 			hasGood |= r.isGood;
 			resolve.blameResolves[i] = r;
+			resolve.isHostile |= blames[i].hostile && r.predicateSucceed;
+			if(!r.predicateSucceed) continue;
+			if(blames[i].effect.type == Effect.Type.Sanity)
+			{
+				resolve.sanityEffect += blames[i].effect.magnitude;
+			}
+			if(blames[i].effect.type == Effect.Type.Redemtion)
+			{
+				resolve.innocenceEffect += blames[i].effect.magnitude;
+			}
+			if(blames[i].effect.type == Effect.Type.Card)
+			{
+				if(blames[i].effect.magnitude < 0)
+				{
+					resolve.discard += Mathf.Abs(blames[i].effect.magnitude);
+				} else {
+					resolve.draw += Mathf.Abs(blames[i].effect.magnitude);
+				}
+			}
+
 		}
 		resolve.type = hasGood && !hasBad ? ResolveType.Good : (hasBad && !hasGood ? ResolveType.Bad : ResolveType.Medium);
 

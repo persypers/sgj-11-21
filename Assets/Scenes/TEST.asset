@@ -31,7 +31,7 @@ MonoBehaviour:
       \u0441\u0430\u043C\u043E\u043B\u0451\u0442!"
     effect:
       type: 2
-      magnitude: 2
+      magnitude: -2
     hostile: 1
   - predicate: 3
     predicateIconPrefab: {fileID: 82216923030914558, guid: dfc25e52d7888c6408250d04ad6d8ec8, type: 3}

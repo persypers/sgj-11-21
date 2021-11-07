@@ -6,13 +6,34 @@ using Fancy;
 public class Global : MonoSingleton<Global>
 {
 	public ResourceConfig config;
+	public GameObject gameUi;
 	public HandView handView;
 	public EncounterView encounterView;
+	public StatusBar statusBar;
 	
 	public Hand hand;
 	public List<Card> deck;
 
+	int sanity;
+	public int Sanity
+	{
+		get => sanity;
+		set {
+			sanity = value;
+			statusBar.sanityLabel.text = sanity.ToString();
+		}
+	}
+	int innocence;
+	public int Innocence
+	{
+		get => innocence;
+		set {
+			innocence = value;
+			statusBar.innocenceLabel.text = innocence.ToString() + "/" + config.maxInnocence.ToString();
+		}
+	}
 
+	public EncounterSource game;
 	public Encounter nextEncounter;
 	public int MaxHeld
 	{
@@ -24,9 +45,17 @@ public class Global : MonoSingleton<Global>
 	{
 		deck = Card.GenerateDeck();
 		Card.Shuffle(deck);
+		Innocence = 0;
+		Sanity = config.baseSanity;
+		game.Reset();
 		//hand.cards = deck.GetRange(0, config.firstDeal);
 		//deck.RemoveRange(0, config.firstDeal);
 		//handView.Reset();
+	}
+
+	public Encounter PopNextEncounter()
+	{
+		return nextEncounter = game.Get();
 	}
 
 	public void Draw()
