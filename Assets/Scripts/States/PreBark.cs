@@ -6,6 +6,7 @@ using Fancy;
 public class PreBark : GameState
 {
 	float t;
+	TMPro.TMP_Text label;
 	protected override void OnEnable()
 	{
 		Global.Instance.PopNextEncounter();
@@ -13,7 +14,9 @@ public class PreBark : GameState
 		base.OnEnable();
 		var go = Global.Instance.barkLabel;
 		go.Show();
-		go.GetComponent<TMPro.TMP_Text>().text = Global.Instance.nextEncounter.preBark;
+		label = go.GetComponent<TMPro.TMP_Text>();
+		label.text = Global.Instance.nextEncounter.preBark;
+		label.color = Global.Instance.config.enemyBarkColor;
 		t = 0.0f;
 	}
 

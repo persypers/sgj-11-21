@@ -33,6 +33,9 @@ public class ResourceConfig : ScriptableObject
 	public Sprite[] diamonds;
 	public Sprite[] hearts;
 
+	public Color defaultBarkColor;
+	public Color enemyBarkColor;
+
 	public Sprite GetCardIcon(Card.Value value, Card.Mast mast)
 	{
 		var sprites = mast == Card.Mast.Clubs ? clubs : mast == Card.Mast.Diamonds ? diamonds : mast == Card.Mast.Spades ? spades : hearts;

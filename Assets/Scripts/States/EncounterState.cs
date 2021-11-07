@@ -33,6 +33,7 @@ public class EncounterState : GameState
 
 		OnHandChanged(0);
 
+		Global.Instance.barkLabel.GetComponent<TMPro.TMP_Text>().color = Global.Instance.config.defaultBarkColor;
 		Global.Instance.barkLabel.Hide();
 		Ben.Instance.isWalking = false;
 	}

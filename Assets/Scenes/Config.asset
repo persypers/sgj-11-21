@@ -23,6 +23,7 @@ MonoBehaviour:
   skipCutscenes: 0
   skipIntro: 1
   firstDeal: 6
+  maxHeld: 3
   predicateIcons:
     m_keys: 
     m_values: []
@@ -94,6 +95,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 08b7f942c9aa34c428e460ca77f671f1, type: 3}
   - {fileID: 21300000, guid: 88cdeda736b69194fa22b018a168360b, type: 3}
   - {fileID: 21300000, guid: c16b93f13b6999249a7294b980c9ad6a, type: 3}
+  defaultBarkColor: {r: 0.13725491, g: 0.05882353, b: 0, a: 1}
+  enemyBarkColor: {r: 0.79607844, g: 0.08627451, b: 0.20392157, a: 1}
   miscIconOrder: 0
   miscIcons:
   - {fileID: 21300000, guid: bfae5dc5d0a4a55449e74bd5d844ca78, type: 3}
