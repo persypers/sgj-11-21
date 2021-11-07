@@ -14,12 +14,14 @@ public static class Predicates
 		KQRed,
 		_Qh,
 		_Ks,
+		_Red
 	}
 
 	public static Dictionary<Enum, Predicate> Table = new Dictionary<Enum, Predicate>()
 	{
 		{Enum._Qh, Both(Value(Card.Value.Queen), Mast(Card.Mast.Hearts))},	/// Дама червей
 		{Enum._Ks, Both(Value(Card.Value.King), Mast(Card.Mast.Spades))},	/// Король пик
+		{Enum._Red, X(Color(Card.Color.Red), 1)}, 							/// Одна красная
 		{Enum._2S, p_2S},
 		{Enum._2S_or_2S, Or(p_2S, p_2S)},
 		{Enum._4Red, X(Color(Card.Color.Red), 4)},
