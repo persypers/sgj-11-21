@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e354c6b7d5a650499c6dafbaca599d7, type: 3}
+  m_Name: Altar Deck
+  m_EditorClassIdentifier: 
+  deck:
+  - {fileID: 11400000, guid: dc0cdc1997eaaa4468b8b99014ae05ab, type: 2}
+  - {fileID: 11400000, guid: 4aecf2686c643b844b4ba04bd49e1a8d, type: 2}
+  - {fileID: 11400000, guid: beca47747e225c0489d3b5580c7b9d18, type: 2}
+  shuffle: 1
