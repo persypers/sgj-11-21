@@ -27,6 +27,16 @@ public class ResourceConfig : ScriptableObject
 	public Sprite[] mastIcons;
 	public GameObject captainPlaceholder;
 
+	public Sprite[] spades;
+	public Sprite[] clubs;
+	public Sprite[] diamonds;
+	public Sprite[] hearts;
+
+	public Sprite GetCardIcon(Card.Value value, Card.Mast mast)
+	{
+		var sprites = mast == Card.Mast.Clubs ? clubs : mast == Card.Mast.Diamonds ? diamonds : mast == Card.Mast.Spades ? spades : hearts;
+		return sprites[(int)value];
+	}
 	public Sprite GetValueIcon(Card.Value value, Card.Color color = Card.Color.Default)
 	{
 		var sprites = color == Card.Color.Red ? redValueIcons : blackValueIcons;

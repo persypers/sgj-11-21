@@ -54,6 +54,46 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f86ac3bb0a7a7644cb1445500385ec71, type: 3}
   - {fileID: 21300000, guid: 7dee6e4c06c20154880c57094e064667, type: 3}
   captainPlaceholder: {fileID: 3049650690024701108, guid: 680e53b301f59fe4aab71b4e9071601b, type: 3}
+  spades:
+  - {fileID: 21300000, guid: 4accc3f60dd80244cb4338160f8c668b, type: 3}
+  - {fileID: 21300000, guid: a810f81192453194795a9e602fed7c95, type: 3}
+  - {fileID: 21300000, guid: e003c5b1e3709b844bcb8727b1f7f7cf, type: 3}
+  - {fileID: 21300000, guid: b39d1a10e21750a4f8b2509b16a5165f, type: 3}
+  - {fileID: 21300000, guid: d1c864647c4c64649b7ac84107de00d4, type: 3}
+  - {fileID: 21300000, guid: 70fc5415689b85144a4d024eca9b3eda, type: 3}
+  - {fileID: 21300000, guid: ee545c9872ca72741b8366588b6ab1b8, type: 3}
+  - {fileID: 21300000, guid: 268ffc3f11a38d647964d7ee1387c923, type: 3}
+  - {fileID: 21300000, guid: 9ddce517991885f40bd69e5e96e7ca3a, type: 3}
+  clubs:
+  - {fileID: 21300000, guid: d141924ef39e944488a5a4afe743d4a1, type: 3}
+  - {fileID: 21300000, guid: fb000a67000d98247af76cde72f65015, type: 3}
+  - {fileID: 21300000, guid: 4e020d8899f551845bf5438fe7f869a5, type: 3}
+  - {fileID: 21300000, guid: e1edce519d76c644aa06a444cc5dfe15, type: 3}
+  - {fileID: 21300000, guid: 4088cb69e5c8b804d9dd9f4033818035, type: 3}
+  - {fileID: 21300000, guid: cf2ac3c291a0fad4881b126b821fbee2, type: 3}
+  - {fileID: 21300000, guid: e0a973a34e116c84b8c1de68b1bca48c, type: 3}
+  - {fileID: 21300000, guid: 866a5b7a0ab7da648952ff62bf1be371, type: 3}
+  - {fileID: 21300000, guid: 6519cf09b9bd845488a051302893725d, type: 3}
+  diamonds:
+  - {fileID: 21300000, guid: 6bc0bc6d2b3bb42499430780212f2293, type: 3}
+  - {fileID: 21300000, guid: 0cea434765b23b14ea793ef8b16e6eaf, type: 3}
+  - {fileID: 21300000, guid: 88ad59f349f5f3148a4d7ca2806dbe18, type: 3}
+  - {fileID: 21300000, guid: cedded768320af14a8ec8d74b3720a9d, type: 3}
+  - {fileID: 21300000, guid: f20867f64610c534fa1dfe5849950bcf, type: 3}
+  - {fileID: 21300000, guid: c00e9e31a0703fd438ccea4e088fb032, type: 3}
+  - {fileID: 21300000, guid: df6a75df93fb1414abf03a04811fd498, type: 3}
+  - {fileID: 21300000, guid: e86fdb7401a795548a25892896aa7a56, type: 3}
+  - {fileID: 21300000, guid: 1a21ddbaa2ca71745ab2692b071d3173, type: 3}
+  hearts:
+  - {fileID: 21300000, guid: 7635331e0f3e33945aec25730b313bbc, type: 3}
+  - {fileID: 21300000, guid: aa0f0654eba7bb146a1e31da15164981, type: 3}
+  - {fileID: 21300000, guid: 80e1abd6e86b80f478c343b904d18b39, type: 3}
+  - {fileID: 21300000, guid: 23e0c16cfbd826548a6c12e8c160061d, type: 3}
+  - {fileID: 21300000, guid: 96c330d552241c74da59ecbca0f18788, type: 3}
+  - {fileID: 21300000, guid: 84edd7c6ddc893d4ba9b7e9cb430c4ac, type: 3}
+  - {fileID: 21300000, guid: 08b7f942c9aa34c428e460ca77f671f1, type: 3}
+  - {fileID: 21300000, guid: 88cdeda736b69194fa22b018a168360b, type: 3}
+  - {fileID: 21300000, guid: c16b93f13b6999249a7294b980c9ad6a, type: 3}
   miscIconOrder: 0
   miscIcons:
   - {fileID: 21300000, guid: bfae5dc5d0a4a55449e74bd5d844ca78, type: 3}

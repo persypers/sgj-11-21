@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CardView : MonoBehaviour, IPointerDownHandler
 {
+	public UnityEngine.UI.Image image;
 	public ValueIcon value;
 	public MastIcon mast;
 	public Transform anchor;
@@ -13,6 +14,12 @@ public class CardView : MonoBehaviour, IPointerDownHandler
 	public static float endThreshold = 0.01f;
 	public void Apply(Card c)
 	{
+		if(image)
+		{
+			image.sprite = Global.Instance.config.GetCardIcon(c.value, c.mast);
+			image.SetNativeSize();
+			return;
+		}
 		value.value = c.value;
 		value.color = (int)c.mast > 1 ? Card.Color.Red : Card.Color.Black;
 		mast.mast = c.mast;
