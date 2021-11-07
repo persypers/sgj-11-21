@@ -18,18 +18,18 @@ MonoBehaviour:
     \u0438 \u043C\u044B \u0441\u043D\u043E\u0432\u0430 \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u043C\u0441\u044F\u2026
     \u0422\u044B \u0432\u0435\u0434\u044C \u043F\u043E\u043C\u043D\u0438\u0448\u044C\u2026"
   blames:
-  - predicate: 2
+  - predicate: 13
     predicateIconPrefab: {fileID: 0}
     text: "\u0422\u043E \u0440\u043E\u0436\u0434\u0435\u0441\u0442\u0432\u0435\u043D\u0441\u043A\u043E\u0435
-      \u0443\u0442\u0440\u043E"
+      \u0443\u0442\u0440\u043E J"
     effect:
       type: 2
       magnitude: -3
     hostile: 0
-  - predicate: 1
+  - predicate: 15
     predicateIconPrefab: {fileID: 0}
     text: "\u041A\u0430\u043A \u043C\u044B \u043A\u0443\u0442\u0430\u043B\u0438\u0441\u044C
-      \u0443 \u043A\u0430\u043C\u0438\u043D\u0430"
+      \u0443 \u043A\u0430\u043C\u0438\u043D\u0430 K"
     effect:
       type: 2
       magnitude: -1

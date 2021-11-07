@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e354c6b7d5a650499c6dafbaca599d7, type: 3}
   m_Name: Lilia Deck
   m_EditorClassIdentifier: 
-  deck: []
-  shuffle: 0
+  deck:
+  - {fileID: 11400000, guid: b1afcc9d53543d542a927c782451d6df, type: 2}
+  - {fileID: 11400000, guid: 0e07d95289abbea4cb564dbe12d966f8, type: 2}
+  - {fileID: 11400000, guid: a235e0aecde148d4e838d56621601b78, type: 2}
+  - {fileID: 11400000, guid: 955463001ccaa9141844bc82f2de9f52, type: 2}
+  shuffle: 1

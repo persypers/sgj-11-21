@@ -23,27 +23,28 @@ MonoBehaviour:
     \u0431\u0440\u0438\u0437\u043E\u043C \u0441\u043F\u0430\u0441\u0435\u043D\u0438\u044F!
     \u0422\u044B\u2026"
   blames:
-  - predicate: 2
+  - predicate: 30
     predicateIconPrefab: {fileID: 0}
     text: "\u041E\u0442\u0440\u0430\u0432\u0438\u043B \u043D\u0430\u0441, \u0447\u0442\u043E\u0431\u044B
       \u043D\u0430\u0448\u0430 \u043F\u043B\u043E\u0442\u044C \u043F\u043E\u0433\u0443\u0431\u0438\u043B\u0430
-      \u043A\u0430\u043D\u043D\u0438\u0431\u0430\u043B\u043E\u0432!"
+      \u043A\u0430\u043D\u043D\u0438\u0431\u0430\u043B\u043E\u0432! 4B"
     effect:
       type: 0
       magnitude: -7
     hostile: 1
-  - predicate: 1
+  - predicate: 24
     predicateIconPrefab: {fileID: 0}
     text: "\u041E\u0441\u0442\u0430\u0432\u0438\u043B \u043D\u0430\u043C \u0448\u0430\u043D\u0441
-      \u043D\u0430 \u0441\u043F\u0430\u0441\u0435\u043D\u0438\u0435."
+      \u043D\u0430 \u0441\u043F\u0430\u0441\u0435\u043D\u0438\u0435. 10a8"
     effect:
       type: 1
       magnitude: 1
     hostile: 0
-  - predicate: 1
+  - predicate: 25
     predicateIconPrefab: {fileID: 0}
     text: "\u041D\u0435 \u0437\u043D\u0430\u043B, \u0447\u0442\u043E \u0432\u0441\u0451
-      \u0442\u0430\u043A \u043E\u0431\u0435\u0440\u043D\u0451\u0442\u0441\u044F."
+      \u0442\u0430\u043A \u043E\u0431\u0435\u0440\u043D\u0451\u0442\u0441\u044F.
+      7aT"
     effect:
       type: 2
       magnitude: -1

@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e354c6b7d5a650499c6dafbaca599d7, type: 3}
   m_Name: Blame Deck
   m_EditorClassIdentifier: 
-  deck: []
-  shuffle: 0
+  deck:
+  - {fileID: 11400000, guid: 93f4b31caeeea09428b84532c2d6174a, type: 2}
+  - {fileID: 11400000, guid: 10187c2efec90414c8abc2c21ef8cf00, type: 2}
+  - {fileID: 11400000, guid: c2c7a428635b89f47984abefd8bde7e8, type: 2}
+  - {fileID: 11400000, guid: 5c8a0367165afeb488a3edd1aa47a139, type: 2}
+  shuffle: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: JanPaul Deck
   m_EditorClassIdentifier: 
   deck:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 28605d70981332446a4b495b101efc66, type: 2}
+  - {fileID: 11400000, guid: b1228d0ab7b750e43876b8f8423fadfc, type: 2}
+  - {fileID: 11400000, guid: 86dd7b119e03dd04e8d85f03eb16718f, type: 2}
+  - {fileID: 11400000, guid: f69d57b251322724990db3eae8573ee5, type: 2}
   shuffle: 1
