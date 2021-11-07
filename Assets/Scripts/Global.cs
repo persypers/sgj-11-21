@@ -14,6 +14,8 @@ public class Global : MonoSingleton<Global>
 	public Hand hand;
 	public List<Card> deck;
 
+	public Para para;
+
 	int sanity;
 	public int Sanity
 	{

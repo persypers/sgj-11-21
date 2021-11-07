@@ -9,8 +9,8 @@ public class HandView : MonoSingleton<HandView>
 	public Transform deck;
 	public ObjectPool cardViewPool;
 	public List<CardView> cardViews;
-	public Transform cardPlaceContainer;
-	List<CardPlace> cardPlaces;
+	public CardPlace[] cardPlaces;
+	int shrinkCount = 9;
 	
 	public void Clear()
 	{
@@ -39,23 +39,33 @@ public class HandView : MonoSingleton<HandView>
 	public void Reset()
 	{
 		Clear();
-		cardPlaces = new List<CardPlace>(cardPlaceContainer.GetComponentsInChildren<CardPlace>(true));
 		for(int i = 0; i < hand.Count; i++)
 		{
 			CardView c = CreateCardView(i);
 			c.Snap();
 			cardViews.Add(c);
 		}
+		UpdateCardPlaces();
 	}
 
 	public void UpdateViewPositions()
 	{
+		UpdateCardPlaces();
 		for(int j = 0; j < cardViews.Count; j++)
 		{
+			
 			cardViews[j].transform.SetSiblingIndex(j);
 			cardViews[j].anchor = cardPlaces[j].anchor;
 			cardViews[j].cardIndex = j;
 			cardPlaces[j].GetComponent<Animator>().SetBool("Low", hand.IsHeld(j));
+		}
+	}
+
+	public void UpdateCardPlaces()
+	{
+		for(int i = 0; i < cardPlaces.Length; i++)
+		{
+			cardPlaces[i].gameObject.SetActive(i < hand.Count || i < shrinkCount);
 		}
 	}
 
@@ -82,7 +92,6 @@ public class HandView : MonoSingleton<HandView>
 	}
 	public void OnEnable()
 	{
-		cardPlaces = new List<CardPlace>(cardPlaceContainer.GetComponentsInChildren<CardPlace>(true));
 		hand.cardInserted.AddListener(OnCardInserted);
 		hand.cardRemoved.AddListener(OnCardRemoved);
 		hand.cardHeld.AddListener(OnCardHeld);
@@ -97,7 +106,7 @@ public class HandView : MonoSingleton<HandView>
 
 	public void SetHighlight(List<Card> cards)
 	{
-		for(int i = 0; i < cardPlaces.Count; i++)
+		for(int i = 0; i < cardPlaces.Length; i++)
 		{
 			cardPlaces[i].GetComponent<Animator>().SetBool("High", false);
 		}

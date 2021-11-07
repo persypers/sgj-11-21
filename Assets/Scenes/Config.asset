@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077c5936a7829e64db62a0c4cb8a572a, type: 3}
   m_Name: Config
   m_EditorClassIdentifier: 
-  maxCardsOnHand: 9
+  maxCardsOnHand: 36
+  maxInnocence: 10
+  baseSanity: 30
   foolModeEnabled: 1
   showRandomCardsOnFail: 0
   rightClickDiscards: 1
