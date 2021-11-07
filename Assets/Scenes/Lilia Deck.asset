@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e354c6b7d5a650499c6dafbaca599d7, type: 3}
-  m_Name: Itan Deck
+  m_Name: Lilia Deck
   m_EditorClassIdentifier: 
-  deck:
-  - {fileID: 11400000, guid: 2a0b98ff2566f6c468619d5c5e6aa0ba, type: 2}
-  - {fileID: 11400000, guid: 0e679b7f85cea82499e87d69569256d3, type: 2}
-  - {fileID: 11400000, guid: 047312f0ca3d6114a8c45358c203a956, type: 2}
-  - {fileID: 11400000, guid: fcd8daa524906ec408cff676f4b6d33a, type: 2}
-  shuffle: 1
+  deck: []
+  shuffle: 0
