@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class GuiltyClashState : CutsceneState
+public class SlashState : CutsceneState
 {
 	protected override void OnEnable()
 	{
+		Ben.Instance.SetTarget(Ben.Instance.killAnchor);
+		Ben.Instance.Snap();
+		Ben.Instance.isWalking = false;
 		base.OnEnable();
+		//Global.Instance.gameUi.SetActive(false);
+		//Global.Instance.mainCanvas.enabled = true;
 	}
 
 	protected override void OnDisable()
@@ -22,6 +27,6 @@ public class GuiltyClashState : CutsceneState
 
 	protected override void OnCutsceneEnd()
 	{
-		GameState.SwitchState<SlashState>();
+		GameState.SwitchState<ResolveEffectState>();
 	}
 }

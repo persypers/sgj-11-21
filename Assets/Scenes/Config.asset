@@ -18,6 +18,8 @@ MonoBehaviour:
   foolModeEnabled: 1
   showRandomCardsOnFail: 0
   rightClickDiscards: 1
+  skipCutscenes: 0
+  skipIntro: 0
   firstDeal: 6
   predicateIcons:
     m_keys: 

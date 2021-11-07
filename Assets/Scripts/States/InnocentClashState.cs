@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fancy;
 
-public class InnocentClashState : GameState
+public class InnocentClashState : CutsceneState
 {
 	protected override void OnEnable()
 	{
@@ -18,6 +18,10 @@ public class InnocentClashState : GameState
 	protected override void Update()
 	{
 		base.Update();
+	}
+
+	protected override void OnCutsceneEnd()
+	{
 		GameState.SwitchState<ResolveEffectState>();
 	}
 }

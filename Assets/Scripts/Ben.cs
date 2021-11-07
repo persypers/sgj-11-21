@@ -15,6 +15,9 @@ public class Ben : MonoSingleton<Ben>
 	public Animator animator;
 	Para para;
 	public Transform target;
+	public Transform appearAnchor;
+	public Transform normalAnchor;
+	public Transform killAnchor;
 	Transform ben;
 
 	protected override void Init()
@@ -32,6 +35,12 @@ public class Ben : MonoSingleton<Ben>
 	public void Snap()
 	{
 		ben.position = target.position;
+		reachedTarget = true;
+	}
+
+	public bool IsTargetReached()
+	{
+		return 0.01f > Mathf.Abs(target.position.x - ben.position.x);
 	}
 
 	public float delta;
@@ -42,6 +51,11 @@ public class Ben : MonoSingleton<Ben>
 	{
 		reachedTarget = false;
 		this.target = target;
+	}
+
+	public void Reset()
+	{
+		animator.SetTrigger("Reset");
 	}
 	public void Update()
 	{

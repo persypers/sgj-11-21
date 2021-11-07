@@ -10,6 +10,8 @@ public class WalkState : GameState
 	protected override void OnEnable()
 	{
 		base.OnEnable();
+		Ben.Instance.isWalking = true;
+		Ben.Instance.SetTarget(Ben.Instance.normalAnchor);
 		t = 0.0f;
 	}
 
@@ -23,7 +25,7 @@ public class WalkState : GameState
 	{
 		base.Update();
 		t += Time.deltaTime;
-		if(t >= TIME)
+		if(t >= TIME && Ben.Instance.IsTargetReached())
 		{
 			GameState.SwitchState<EncounterState>();
 		}

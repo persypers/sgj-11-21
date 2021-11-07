@@ -11,6 +11,8 @@ public class ResourceConfig : ScriptableObject
 	public bool foolModeEnabled = false;
 	public bool showRandomCardsOnFail = false;
 	public bool rightClickDiscards = true;
+	public bool skipCutscenes = false;
+	public bool skipIntro = false;
 	public int firstDeal = 6;
 	[System.Serializable]
 	public class PredicateIconDict : SerializableDictionary<Predicates.Enum, GameObject> {}

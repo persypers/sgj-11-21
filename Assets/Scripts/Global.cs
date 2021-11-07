@@ -15,6 +15,7 @@ public class Global : MonoSingleton<Global>
 	public List<Card> deck;
 
 	public Para para;
+	public Canvas mainCanvas;
 
 	int sanity;
 	public int Sanity
@@ -87,6 +88,6 @@ public class Global : MonoSingleton<Global>
 	protected override void Awake()
 	{
 		base.Awake();
-		GameState.SwitchState<MenuState>();
+		GameState.SwitchState<IntroState>();
 	}
 }

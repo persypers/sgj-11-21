@@ -25,6 +25,8 @@ public class EncounterState : GameState
 		hand.cardRemoved.AddListener(OnHandChanged);
 
 		OnHandChanged(0);
+
+		Ben.Instance.isWalking = false;
 	}
 
 	protected override void OnDisable()

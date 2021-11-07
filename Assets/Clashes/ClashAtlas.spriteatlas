@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ClashAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 12
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: b74598f82f6930c45aeac7a3fa2734e1, type: 3}
+    - {fileID: 2800000, guid: 94fba1a72e28a474a9cef77955dacd64, type: 3}
+    - {fileID: 2800000, guid: a2d1a48cbdb7be545a9aa63e5d396199, type: 3}
+    - {fileID: 2800000, guid: f751ba1fa4a506a4c8c888806ae72d3a, type: 3}
+    - {fileID: 2800000, guid: ffc54608bf4eb4842852dac6ce38ed14, type: 3}
+    - {fileID: 2800000, guid: 9dd5109ea1e44de4cbe4705bcefec048, type: 3}
+    - {fileID: 2800000, guid: 026dec70ad10f6d4aa489c4368de6c96, type: 3}
+    - {fileID: 2800000, guid: 762039f4db7d8a6418891a64a1a5c861, type: 3}
+    - {fileID: 2800000, guid: 3b2001ee15ac2ed4a849d4588fcb931a, type: 3}
+    - {fileID: 2800000, guid: 214f894d9b502f34a99c27569bcff901, type: 3}
+    - {fileID: 2800000, guid: 371c74b41150f8a4b9799732f13fbbcf, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
+  m_RenderDataMap: {}
+  m_Tag: ClashAtlas
+  m_IsVariant: 0

@@ -18,14 +18,7 @@ public class JudgementState : GameState
 		enc = Global.Instance.nextEncounter;
 		view = Global.Instance.encounterView;
 
-		if(Global.Instance.config.foolModeEnabled)
-		{
-			resolve = Global.Instance.resolveCache;
-		}
-		else
-		{
-			resolve = Global.Instance.UpdateResolveCache();
-		}
+		resolve = Global.Instance.UpdateResolveCache();
 
 		StartCoroutine(StateRoutine());
 	}
