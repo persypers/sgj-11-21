@@ -5,7 +5,7 @@ using Fancy;
 
 public class GameOver : GameState
 {
-	public string text = "Поражение";
+	public string text = "Виновен!\nВсё тайное становится явным.";
 	TMPro.TMP_Text label;
 	protected override void OnEnable()
 	{

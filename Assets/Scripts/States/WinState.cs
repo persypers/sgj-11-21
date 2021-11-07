@@ -5,7 +5,7 @@ using Fancy;
 
 public class WinState : GameState
 {
-	public string text = "Вот и всё, ребята!\nСпасибо, что играли";
+	public string text = "Оправдан\nВ этот раз тебе повезло.";
 	TMPro.TMP_Text label;
 	protected override void OnEnable()
 	{
