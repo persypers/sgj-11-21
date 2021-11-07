@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e354c6b7d5a650499c6dafbaca599d7, type: 3}
+  m_Name: Plane Deck
+  m_EditorClassIdentifier: 
+  deck:
+  - {fileID: 11400000, guid: a6edd58f74842de45afe9ba54892d2b6, type: 2}
+  - {fileID: 11400000, guid: 3cbd153f09b1e5c42a8cb33122c8f6f7, type: 2}
+  - {fileID: 11400000, guid: 4dd2eeeb2bb903d4e9b9474152560327, type: 2}
+  shuffle: 1
