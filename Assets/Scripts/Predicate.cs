@@ -107,7 +107,7 @@ public static class Predicates
 		{Enum._10a8,  And(Value(Card.Value.Ten) , Value(Card.Value.Eight))},
 		{Enum._7aT,  And(Value(Card.Value.Seven) , Value(Card.Value.Ace))},
 		{Enum._SaK, And(Mast(Card.Mast.Spades), Value(Card.Value.King))},
-		{Enum._SaH, And(Mast(Card.Mast.Spades), Mast(Card.Mast.Spades))},
+		{Enum._SaH, And(Mast(Card.Mast.Spades), Mast(Card.Mast.Hearts))},
 		{Enum._SaC, And(Mast(Card.Mast.Spades), Mast(Card.Mast.Clubs))}
 
 		/// Delete last comma!
