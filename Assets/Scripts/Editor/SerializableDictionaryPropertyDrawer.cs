@@ -8,3 +8,6 @@ public class EffectIconDrawer : SerializableDictionaryPropertyDrawer {}
 
 [CustomPropertyDrawer(typeof(ResourceConfig.PredicateIconDict))]
 public class PredicateIconDictDrawer : SerializableDictionaryPropertyDrawer {}
+
+[CustomPropertyDrawer(typeof(LocoImage.LocalizedSprites))]
+public class LocalizedSpritesDrawer : SerializableDictionaryPropertyDrawer {}

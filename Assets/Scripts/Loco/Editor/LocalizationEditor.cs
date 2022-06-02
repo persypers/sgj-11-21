@@ -75,15 +75,22 @@ public class LocalizationEditor : Editor
 
 	private void ExtractEncounterLocale(Encounter enc, Locale loc, bool isEmpty = false)
 	{
-		TryAddString(loc, enc.name, enc.text, isEmpty);
+		TryAddString(loc, enc.name + "_text", enc.text, isEmpty);
 		TryAddString(loc, enc.name + "_prebark", enc.preBark, isEmpty);
 		TryAddString(loc, enc.name + "_goodbark", enc.goodBark, isEmpty);
 		TryAddString(loc, enc.name + "_medbark", enc.mediumBark, isEmpty);
 		TryAddString(loc, enc.name + "_badbark", enc.badBark, isEmpty);
+		enc.text = enc.name + "_text";
+		enc.preBark = enc.name + "_prebark";
+		enc.goodBark = enc.name + "goodbark";
+		enc.mediumBark = enc.name + "medbark";
+		enc.badBark = enc.name + "badbark";
 		for(int i = 0; i < enc.blames.Length; i++)
 		{
 			TryAddString(loc, enc.name + "_blame_" + i, enc.blames[i].text, isEmpty);
+			enc.blames[i].text = enc.name + "_blame_" + i;
 		}
+		EditorUtility.SetDirty(enc);
 	}
 
 	private void TryAddString(Locale loc, string key, string value, bool isEmpty)
