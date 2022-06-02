@@ -13,9 +13,10 @@ public class PostBark : GameState
 		go.Show();
 		var resolve = Global.Instance.resolveCache;
 		var enc = Global.Instance.nextEncounter;
-		go.GetComponent<TMPro.TMP_Text>().text = 
+		go.GetComponent<TMPro.TMP_Text>().text = Localization.Localize(
 			resolve.type == Encounter.ResolveType.Bad ? enc.badBark : 
-			(resolve.type == Encounter.ResolveType.Medium ? enc.mediumBark : enc.goodBark);
+			(resolve.type == Encounter.ResolveType.Medium ? enc.mediumBark : enc.goodBark)
+		);
 		t = 0.0f;
 
 		Ben.Instance.isWalking = true;

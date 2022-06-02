@@ -10,7 +10,7 @@ public class GameOver : GameState
 	protected override void OnEnable()
 	{
 		label = Global.Instance.barkLabel.GetComponent<TMPro.TMP_Text>();
-		label.text = text;
+		label.text = Localization.Localize(text);
 		base.OnEnable();
 		StartCoroutine(StateRoutine());
 	}

@@ -119,7 +119,7 @@ public class Global : MonoSingleton<Global>
 	protected override void Awake()
 	{
 		base.Awake();
-		GameState.SwitchState<IntroState>();
+		GameState.SwitchState<LocaleSelect>();
 	}
 
 	public void OnRoundEnd()

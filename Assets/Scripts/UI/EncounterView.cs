@@ -10,7 +10,7 @@ public class EncounterView : Fancy.MonoSingleton<EncounterView>
 
 	public void Apply(Encounter encounter)
 	{
-		label.text = encounter.text;
+		label.text = Localization.Localize(encounter.text);
 		var blames = encounter.blames;
 		for(int i = 0; i < blameViews.Length; i++)
 		{

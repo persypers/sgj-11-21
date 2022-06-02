@@ -10,7 +10,7 @@ public class WinState : GameState
 	protected override void OnEnable()
 	{
 		label = Global.Instance.barkLabel.GetComponent<TMPro.TMP_Text>();
-		label.text = text;
+		label.text = Localization.Localize(text);
 		label.gameObject.Show();
 
 		Global.Instance.gameUi.Hide();

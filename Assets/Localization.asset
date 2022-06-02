@@ -17,6 +17,5 @@ MonoBehaviour:
     - en
     - ru
     m_values:
-    - {fileID: 11400000, guid: fe237739662c30c47a38f5fc93c86535, type: 2}
+    - {fileID: 11400000, guid: 329d83e327f8cb24d9403eabaa95817e, type: 2}
     - {fileID: 11400000, guid: 5eadcb8efd60ab544a6522172c6ce168, type: 2}
-  activeLocale: {fileID: 0}

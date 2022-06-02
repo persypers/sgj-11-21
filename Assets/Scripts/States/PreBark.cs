@@ -15,7 +15,7 @@ public class PreBark : GameState
 		var go = Global.Instance.barkLabel;
 		go.Show();
 		label = go.GetComponent<TMPro.TMP_Text>();
-		label.text = Global.Instance.nextEncounter.preBark;
+		label.text = Localization.Localize(Global.Instance.nextEncounter.preBark);
 		label.color = Global.Instance.config.enemyBarkColor;
 		t = 0.0f;
 	}

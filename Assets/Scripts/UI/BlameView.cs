@@ -13,7 +13,7 @@ public class BlameView : MonoBehaviour
 	public GameObject predicateIcon = null;
 	public void Apply(Encounter.Blame blame)
 	{
-		label.text = blame.text;
+		label.text = Localization.Localize(blame.text);
 		effectView.Apply(blame.effect);
 		RemovePredicateIcon();
 		GameObject icon = blame.predicateIconPrefab;

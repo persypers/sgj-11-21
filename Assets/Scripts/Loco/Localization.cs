@@ -11,6 +11,7 @@ public class Localization : ScriptableObject
 	public class Locales : SerializableDictionary<string, Locale> {}
 	public Locales locales;
 	private Locale activeLocale;
+	public static string LocaleKey {get; private set;}
 
 	public static string Localize(string term)
 	{
@@ -30,6 +31,7 @@ public class Localization : ScriptableObject
 		if(!global) return;
 
 		Localization loco = global.config.localization;
+		LocaleKey = loc;
 		loco.activeLocale = loco.locales[loc];
 	}
 

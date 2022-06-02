@@ -24,7 +24,7 @@ public class DiscardState : GameState
 
 	public void UpdateLabel()
 	{
-		label.text = text + toDiscard.ToString();
+		label.text = System.String.Format(Localization.Localize(text), toDiscard.ToString());
 	}
 
 	public void CardTap(GameObject go)
