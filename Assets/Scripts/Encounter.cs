@@ -63,7 +63,7 @@ public class Encounter : EncounterSource
 		public int magnitude;
 	}
 
-	[TextArea]
+	[TextArea(5, 15)]
 	public string text;
 	public GameObject character;
 

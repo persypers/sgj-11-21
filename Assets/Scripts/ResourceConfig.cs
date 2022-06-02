@@ -35,6 +35,7 @@ public class ResourceConfig : ScriptableObject
 
 	public Color defaultBarkColor;
 	public Color enemyBarkColor;
+	public Localization localization;
 
 	public Sprite GetCardIcon(Card.Value value, Card.Mast mast)
 	{
